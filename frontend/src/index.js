@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 const kintoneRecords = 'http://localhost:5000/getData';
 
 const callRestApi = async () => {
@@ -25,7 +25,7 @@ function RenderResult() {
     </div>
   );
 };
-ReactDOM.render(
-  <RenderResult />,
-  document.querySelector('#root')
+const root = createRoot(document.getElementById('root'))
+root.render(
+  <RenderResult />
 );
